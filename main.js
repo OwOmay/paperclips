@@ -961,7 +961,7 @@ function displayProjects(project) {
   blink(project.element);
 }
 
-//  HYPNODRONE EVENT ----------------------------------------------------------------
+// HYPNODRONE EVENT ----------------------------------------------------------------
 
 hypnoDroneEventDivElement.style.display = "none";
 var longBlinkCounter = 0;
@@ -993,7 +993,7 @@ function longBlink(element) {
     }
 
     if (longBlinkCounter >= 120) {
-      //console.log("weed wizzard");
+      // console.log("weed wizzard");
       clearInterval(handle);
       longBlinkCounter = 0;
       element.style.display = "none";
@@ -1012,7 +1012,7 @@ function hypnoDroneEvent() {
   longBlink(hypnoDroneEventDivElement);
 }
 
-//  MESSAGES ------------------------------------------------------------------------
+// MESSAGES ------------------------------------------------------------------------
 
 function displayMessage(msg) {
   readoutElement5.innerHTML = readoutElement4.innerHTML;
@@ -1759,7 +1759,7 @@ window.setInterval(function () {
   portfolioSize = stocks.length;
 
   for (var i = 1; i <= portfolioSize; i++) {
-    //m@ todo make this into an array ok?
+    // m@ todo make this into an array ok?
     var n = i.toString();
     var s = i - 1;
     stockSymbolElements[i - 1].innerHTML = stocks[s].symbol;
@@ -1771,14 +1771,14 @@ window.setInterval(function () {
 
   var firstBlankSlot = portfolioSize + 1;
 
-  // for(var i = firstBlankSlot; i <= 5; i++){   <------ Frank Fix
+  // for (var i = firstBlankSlot; i <= 5; i++) {   <------ Frank Fix
 
   for (var i = firstBlankSlot; i < 5; i++) {
-    stockSymbolElements[i].innerHTML = "&nbsp";
-    stockAmountElements[i].innerHTML = "&nbsp";
-    stockPriceElements[i].innerHTML = "&nbsp";
-    stockTotalElements[i].innerHTML = "&nbsp";
-    stockProfitElements[i].innerHTML = "&nbsp";
+    stockSymbolElements[i].innerHTML = "&nbsp;";
+    stockAmountElements[i].innerHTML = "&nbsp;";
+    stockPriceElements[i].innerHTML = "&nbsp;";
+    stockTotalElements[i].innerHTML = "&nbsp;";
+    stockProfitElements[i].innerHTML = "&nbsp;";
   }
 }, 100);
 
@@ -2142,8 +2142,8 @@ function newTourney() {
   generateGrid();
 
   btnRunTournamentElement.disabled = false;
-  vertStratElement.innerHTML = "&nbsp";
-  horizStratElement.innerHTML = "&nbsp";
+  vertStratElement.innerHTML = "&nbsp;";
+  horizStratElement.innerHTML = "&nbsp;";
   tourneyDisplayElement.innerHTML = "Pick strategy, run tournament, gain yomi";
 }
 
@@ -2310,7 +2310,7 @@ function calculateStratsBeat() {
 }
 
 function populateTourneyReport() {
-  //m@ make results array
+  // m@ make results array
 
   for (i = 0; i < results.length; i++) {
     tourneyResultsElements[i].innerHTML =
@@ -2329,8 +2329,8 @@ function populateTourneyReport() {
 function displayTourneyReport() {
   resultsFlag = 1;
 
-  vertStratElement.innerHTML = "&nbsp";
-  horizStratElement.innerHTML = "&nbsp";
+  vertStratElement.innerHTML = "&nbsp;";
+  horizStratElement.innerHTML = "&nbsp;";
   tournamentTableElement.style.display = "none";
   tournamentResultsTableElement.style.display = "";
 }
@@ -2455,7 +2455,7 @@ function clipClick(number) {
     }
 
     if (milestoneFlag < 15) {
-      clipsElement.innerHTML = formatWithCommas(Math.ceil(clips), 0); //m@ todo fixed the thing that you fucked up where you made the tool tip of crunched not be in spelled numbers
+      clipsElement.innerHTML = formatWithCommas(Math.ceil(clips), 0); // m@ todo fixed the thing that you fucked up where you made the tool tip of crunched not be in spelled numbers
     }
     wireElement.innerHTML = formatWithCommas(wire);
     unsoldClipsElement.innerHTML = formatWithCommas(unsoldClips, 0);
@@ -2549,7 +2549,7 @@ function makeFactory() {
     updateUpgrades();
 
     factoryCost = factoryCost * fcmod;
-    //   factoryCost = Math.log(1.25,(factoryLevel+1))*100000000;
+    // factoryCost = Math.log(1.25, factoryLevel + 1) * 100000000;
     factoryCostDisplayElement.innerHTML = spellf(factoryCost);
   }
 }
@@ -2818,11 +2818,11 @@ function updateSwarm() {
       );
     }
 
-    //        THE OLD WAY
-    //        giftCountdown = giftPeriod;
-    //        elapsedTime = 0;
+    // THE OLD WAY
+    // giftCountdown = giftPeriod;
+    // elapsedTime = 0;
 
-    //        THE NEW WAY
+    // THE NEW WAY
     giftBits = 0;
   }
 
@@ -2855,11 +2855,11 @@ function updateSwarm() {
   }
 
   if (swarmStatus == 0) {
-    //       THE OLD WAY
-    //      elapsedTime = elapsedTime + 1;
-    //      giftCountdown = ((giftPeriod/Math.log(d)) / (sliderPos/100)) - elapsedTime;
+    // THE OLD WAY
+    // elapsedTime = elapsedTime + 1;
+    // giftCountdown = giftPeriod / Math.log(d) / (sliderPos / 100) - elapsedTime;
 
-    //      THE NEW WAY
+    // THE NEW WAY
     giftBitGenerationRate = Math.log(d) * (sliderPos / 100);
     giftBits = giftBits + giftBitGenerationRate;
     giftCountdown = (giftPeriod - giftBits) / giftBitGenerationRate;
@@ -3341,7 +3341,7 @@ function calculateRev() {
 
   for (i = 0; i < incomeTracker.length; i++) {
     sum = Math.round((sum + incomeTracker[i]) * 100) / 100;
-    //        console.log("sum = "+sum);
+    // console.log("sum = " + sum);
   }
 
   trueAvgRev = sum / incomeTracker.length;
@@ -3861,14 +3861,13 @@ var oneToTen = [
 function spellf(userInput) {
   var numToWorkOn;
 
-  //        if (userInput === availableMatter)
-  //        {
-  //         console.log("_______");
-  //         console.log(userInput);
-  //        }
-  //create map for all unique names in numbering system
+  // if (userInput === availableMatter) {
+  //   console.log("_______");
+  //   console.log(userInput);
+  // }
+  // create map for all unique names in numbering system
 
-  //To check if spell has been called as a function call :   spell(123)   window.spell(123)
+  // To check if spell has been called as a function call :   spell(123)   window.spell(123)
 
   if (userInput < 0) {
     console.log("Error, value less than 0");
@@ -3879,7 +3878,7 @@ function spellf(userInput) {
     numToWorkOn = "" + userInput;
   }
 
-  //To check if spell has been called using a Number/String Object:   "123".spell()   123..spell()
+  // To check if spell has been called using a Number/String Object:   "123".spell()   123..spell()
   else if (typeof this == "object") {
     numToWorkOn = this.toString();
   } else {
@@ -3909,7 +3908,7 @@ function spellf(userInput) {
     numToWorkOn = leftNum;
   }
 
-  //Put limit check on the program, placevalue map should be increased to increase capacity
+  // Put limit check on the program, placevalue map should be increased to increase capacity
   if (numToWorkOn.length >= 303) {
     throw new Error("Number out of bonds!");
     return;
@@ -3917,7 +3916,7 @@ function spellf(userInput) {
     return convertToString(numToWorkOn);
   }
 
-  //Recursie logic to break number into strings of length 3 each and recursively pronounce each
+  // Recursie logic to break number into strings of length 3 each and recursively pronounce each
   function convertToString(stringEquivalent) {
     if (stringEquivalent == 0) {
       return "0";
@@ -3943,11 +3942,11 @@ function spellf(userInput) {
       }
       unitLookup++;
     }
-    //to trim of the extra ", " from last
+    // to trim of the extra ", " from last
     return result.substring(0, result.length - 3);
   }
 
-  //Determines the range of input and calls respective function
+  // Determines the range of input and calls respective function
   function pronounceNum(val) {
     val = parseInt(val);
     if (parseInt(val / 10) == 0) {
@@ -3957,7 +3956,7 @@ function spellf(userInput) {
     } else return numLessThan1000(val);
   }
 
-  //Pronounces any number less than 1000
+  // Pronounces any number less than 1000
   function numLessThan1000(val) {
     val = Number(val);
     var hundredPlace = parseInt(val / 100),
@@ -3970,7 +3969,7 @@ function spellf(userInput) {
     return result;
   }
 
-  //Pronounces any number less than 99
+  // Pronounces any number less than 99
   function numLessThan99(val) {
     val = Number(val);
     var tenthPlace = parseInt(val / 10),
@@ -3986,7 +3985,7 @@ function spellf(userInput) {
     }
   }
 
-  //Pronounces any number less than 10
+  // Pronounces any number less than 10
   function numLessThan10(val) {
     val = Number(val);
     return oneToTen[val];
@@ -4023,7 +4022,7 @@ var probeCost = Math.pow(10, 17);
 
 var probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 500);
 
-//var probeCost = Math.pow((probeLaunchLevel+1), 1.44)*Math.pow(10, 24);
+// var probeCost = Math.pow(probeLaunchLevel + 1, 1.44) * Math.pow(10, 24);
 
 function increaseProbeTrust() {
   if (yomi >= probeTrustCost && probeTrust < maxTrust) {
@@ -4044,9 +4043,10 @@ function increaseMaxTrust() {
     honor = honor - maxTrustCost;
     honorDisplayElement.innerHTML = formatWithCommas(Math.round(honor));
     maxTrust = maxTrust + 10;
-    // maxTrustCost = Math.floor(Math.pow(maxTrust, 1.17)*1000);
+    // maxTrustCost = Math.floor(Math.pow(maxTrust, 1.17) * 1000);
     maxTrustDisplayElement.innerHTML = formatWithCommas(maxTrust);
-    // document.getElementById('maxTrustCostDisplay').innerHTML = Math.floor(maxTrustCost).toLocaleString();
+    // document.getElementById("maxTrustCostDisplay").innerHTML =
+    //   Math.floor(maxTrustCost).toLocaleString();
     displayMessage("Maximum trust increased, probe design space expanded");
   }
 }
@@ -4173,7 +4173,7 @@ function makeProbe() {
     probeCount++;
     probesLaunchedDisplayElement.innerHTML = formatWithCommas(probeLaunchLevel);
 
-    // probeCost = Math.pow((probeLaunchLevel+1), 1.23)*Math.pow(10, 20);
+    // probeCost = Math.pow(probeLaunchLevel + 1, 1.23) * Math.pow(10, 20);
     // probeCost = Math.pow(10, 20);
 
     probeCostDisplayElement.innerHTML = spellf(probeCost);
@@ -4265,7 +4265,7 @@ function encounterHazards() {
 function spawnFactories() {
   var amount = probeCount * probeFacBaseRate * probeFac;
 
-  //FACTORIES COST 100M CLIPS EACH
+  // FACTORIES COST 100M CLIPS EACH
   if (amount * 100000000 > unusedClips) {
     amount = Math.floor(unusedClips / 100000000);
   }
@@ -4279,7 +4279,7 @@ function spawnFactories() {
 function spawnHarvesters() {
   var amount = probeCount * probeHarvBaseRate * probeHarv;
 
-  //DRONES COST 2M CLIPS EACH
+  // DRONES COST 2M CLIPS EACH
   if (amount * 2000000 > unusedClips) {
     amount = Math.floor(unusedClips / 2000000);
   }
@@ -4292,7 +4292,7 @@ function spawnHarvesters() {
 function spawnWireDrones() {
   var amount = probeCount * probeWireBaseRate * probeWire;
 
-  //DRONES COST 2M CLIPS EACH
+  // DRONES COST 2M CLIPS EACH
   if (amount * 2000000 > unusedClips) {
     amount = Math.floor(unusedClips / 2000000);
   }
@@ -4321,13 +4321,13 @@ function drift() {
 
 function war() {
   checkForBattles();
-  //  battleClock++;
-  //  if (battleClock>=battleAlarm){
-  //            updateBattles();
-  //            battleClock = 0;
-  //    }
+  // battleClock++;
+  // if (battleClock >= battleAlarm) {
+  //   updateBattles();
+  //   battleClock = 0;
+  // }
 
-  //  battleCleanUp();
+  // battleCleanUp();
 }
 
 // DRONES
@@ -4781,10 +4781,10 @@ window.setInterval(function () {
 // Saving and Loading
 
 function refresh() {
-  //DEBUG
+  // DEBUG
 
-  //    availableMatter = Math.pow(10, 24)*6000;
-  //    acquiredMatter = 0;
+  // availableMatter = Math.pow(10, 24) * 6000;
+  // acquiredMatter = 0;
 
   ////////
 
