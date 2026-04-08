@@ -193,8 +193,6 @@ function cacheDOMElements() {
   secValueElement = document.getElementById("secValue");
   portValueElement = document.getElementById("portValue");
   investUpgradeCostElement = document.getElementById("investUpgradeCost");
-  prestigeUcounterElement = document.getElementById("prestigeUcounter");
-  prestigeScounterElement = document.getElementById("prestigeScounter");
   newTourneyCostElement = document.getElementById("newTourneyCost");
   maxTrustDisplayElement = document.getElementById("maxTrustDisplay");
   victoryDivElement = document.getElementById("victoryDiv");
@@ -560,8 +558,6 @@ var swarmGiftDivElement;
 var swarmEngineElement;
 var clipsPerSecDivElement;
 var tothDivElement;
-var prestigeUcounterElement;
-var prestigeScounterElement;
 var newTourneyCostElement;
 var maxTrustDisplayElement;
 var victoryDivElement;
@@ -1190,12 +1186,6 @@ function buttonUpdate() {
     combatBodyCountElement.style.display = "none";
   } else {
     combatBodyCountElement.style.display = "";
-  }
-
-  if (prestigeU < 1 && prestigeS < 1) {
-    prestigeDivElement.style.display = "none";
-  } else {
-    prestigeDivElement.style.display = "";
   }
 
   if (wire < 1) {
@@ -4385,6 +4375,8 @@ function processMatter() {
   }
 }
 
+displayMessage("Welcome to Universal Paperclips");
+
 // CHECK FOR SAVES
 
 if (localStorage.getItem("saveGame") != null) {
@@ -4393,6 +4385,12 @@ if (localStorage.getItem("saveGame") != null) {
 
 if (localStorage.getItem("savePrestige") != null) {
   loadPrestige();
+  if (prestigeU > 0) {
+    displayMessage("World Level: " + (prestigeU + 1));
+  }
+  if (prestigeS > 0) {
+    displayMessage("Simulation Level: " + (prestigeS + 1));
+  }
   refresh();
 }
 
@@ -4828,8 +4826,6 @@ function refresh() {
   investUpgradeCostElement.innerHTML = formatWithCommas(investUpgradeCost);
   yomiDisplayElement.innerHTML = formatWithCommas(yomi);
   investmentLevelElement.innerHTML = investLevel;
-  prestigeUcounterElement.innerHTML = prestigeU + 1;
-  prestigeScounterElement.innerHTML = prestigeS + 1;
   newTourneyCostElement.innerHTML = formatWithCommas(tourneyCost);
   tourneyInProg = 0;
   maxTrustDisplayElement.innerHTML = formatWithCommas(maxTrust);
