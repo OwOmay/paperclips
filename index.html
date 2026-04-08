@@ -8,6 +8,7 @@
         />
         <link rel="stylesheet" type="text/css" href="css/titlescreen.css" />
         <link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="manifest" href="manifest.json" />
         <title>Universal Paperclips</title>
     </head>
 
@@ -17,5 +18,15 @@
                 <img src="img/title.png" alt="Universal Paperclips" />
             </a>
         </div>
+        <script>
+            if (
+                "serviceWorker" in navigator &&
+                window.location.hash !== "#dev"
+            ) {
+                window.addEventListener("load", function () {
+                    navigator.serviceWorker.register("sw.js");
+                });
+            }
+        </script>
     </body>
 </html>

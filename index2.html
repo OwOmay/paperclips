@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="css/interface.css" />
         <link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="manifest" href="manifest.json" />
         <title>Universal Paperclips</title>
     </head>
 
@@ -1328,6 +1329,17 @@
             <script type="text/javascript" src="js/artifacts.js"></script>
             <script type="text/javascript" src="js/map.js"></script>
             <script type="text/javascript" src="js/main.js"></script>
+
+            <script>
+                if (
+                    "serviceWorker" in navigator &&
+                    window.location.hash !== "#dev"
+                ) {
+                    window.addEventListener("load", function () {
+                        navigator.serviceWorker.register("sw.js");
+                    });
+                }
+            </script>
         </div>
     </body>
 </html>
